@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator Matriks Interaktif</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1 class="main-title">🚀 Perhitungan Determinan dan Operasi Matriks 🚀</h1>
+        <p class="tagline">
+            Selamat datang! Web ini akan membantu kamu menghitung determinan matriks dengan cepat dan akurat. Tersedia detail pengerjaan menggunakan metode Minor-Kofaktor dan Sarrus. Selain itu, kamu juga bisa mempelajari berbagai operasi matriks seperti penjumlahan, pengurangan, dan perkalian langkah demi langkah.
+        </p>
+
+        <div class="mode-selector">
+            <button id="determinantModeBtn" class="mode-btn active">Determinan Matriks</button>
+            <button id="operationModeBtn" class="mode-btn">Operasi Matriks</button>
+        </div>
+
+        <section id="determinantSection" class="matrix-section">
+            <h2>Hitung Determinan Matriks</h2>
+            <div class="input-group">
+                <label for="detMatrixOrder">Pilih Ordo Matriks:</label>
+                <input type="number" id="detMatrixOrder" min="2" max="5" value="3">
+            </div>
+            <div id="detMatrixInputContainer" class="matrix-input-container">
+                </div>
+            <p id="detWarning" class="warning-text"></p>
+            <button id="calculateDeterminantBtn" class="calculate-btn">Hitung Determinan</button>
+
+            <div id="detCalculationDetails" class="calculation-details">
+                <h3>Langkah-Langkah Perhitungan Determinan</h3>
+                <div class="method-selector">
+                    <button id="minorCofactorMethodBtn" class="method-btn active">Metode Minor-Kofaktor</button>
+                    <button id="sarrusMethodBtn" class="method-btn">Metode Sarrus</button>
+                </div>
+                <div id="minorCofactorSteps" class="method-steps">
+                    </div>
+                <div id="sarrusSteps" class="method-steps">
+                    </div>
+            </div>
+        </section>
+
+        <section id="operationSection" class="matrix-section" style="display: none;">
+            <h2>Lakukan Operasi Matriks</h2>
+            <div class="input-group">
+                <label for="opMatrixOperationType">Pilih Jenis Operasi:</label>
+                <select id="matrixOperationType">
+                    <option value="add">Penjumlahan</option>
+                    <option value="subtract">Pengurangan</option>
+                    <option value="multiply">Perkalian</option>
+                </select>
+            </div>
+            <div class="input-group">
+                <label for="opMatrixCount">Jumlah Matriks:</label>
+                <select id="opMatrixCount">
+                    <option value="two">Dua Matriks</option>
+                    <option value="three">Tiga Matriks</option>
+                </select>
+            </div>
+            <div class="input-group">
+                <label for="opMatrixOrder">Pilih Ordo Matriks:</label>
+                <input type="number" id="opMatrixOrder" min="2" max="4" value="3">
+            </div>
+            <div id="opMatrixInputContainer" class="matrix-input-container">
+                </div>
+            <p id="opWarning" class="warning-text"></p>
+            <button id="calculateOperationBtn" class="calculate-btn">Hitung Operasi</button>
+
+            <div id="opCalculationDetails" class="calculation-details">
+                <h3>Langkah-Langkah Perhitungan Operasi</h3>
+                <div id="operationSteps" class="method-steps">
+                    </div>
+            </div>
+        </section>
+
+        <div id="loadingIndicator" class="loading-indicator" style="display: none;">
+            Memuat hasil...
+        </div>
+
+        <div id="resultArea" class="result-area" style="display: none;">
+            <h3>Hasil Perhitungan</h3>
+            <div id="finalResultDisplay" class="final-result-display">
+                <div id="resultContent" class="result-content"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
